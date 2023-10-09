@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build: 
+      context: ./bin_auto_admin/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./bin_auto_admin:/app
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
+    restart: always
+
+# volumes:
+#   pgdata:
+#     external: true
