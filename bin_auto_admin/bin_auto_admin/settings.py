@@ -77,6 +77,9 @@ WSGI_APPLICATION = 'bin_auto_admin.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATABASES = {
      'default': {
