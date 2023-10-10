@@ -20,15 +20,15 @@ services:
   db:
     image: postgres
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_DB      : 'bin_auto_tables'
       POSTGRES_USER    : 'postgres'
       POSTGRES_PASSWORD: 'superpassword3000'
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
     # restart: always
 
-volumes:
-  pgdata:
-    external: true
+# volumes:
+#   pgdata:
+#     external: true
