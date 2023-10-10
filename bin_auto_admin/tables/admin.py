@@ -16,7 +16,7 @@ class FileResource(resources.ModelResource):
 
     class Meta:
         model = File
-        exclude = ('id', 'created_at, ')
+        exclude = ('id', 'created_at', 'updated_at')
 
 # вывод данных на странице
 class FileAdmin(ImportExportModelAdmin):
